@@ -28,7 +28,9 @@ describe('Data Fetching', () => {
     }));
 
     await act(() => {
-      ReactDOM.createRoot(container).render(<User id="1234" />);
+      ReactDOM.createRoot(container).render(
+        <User id="1234" />
+      );
     });
     expect(global.fetch).toHaveBeenCalled();
     expect(container.querySelector("summary").textContent).toBe(fakeUser.name);
@@ -37,5 +39,4 @@ describe('Data Fetching', () => {
   
     global.fetch.mockRestore();
   });
-
 });
