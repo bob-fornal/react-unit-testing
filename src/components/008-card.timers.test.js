@@ -42,6 +42,7 @@ describe('Timers', () => {
   it("should cleanup on being removed", () => {
     const onSelect = jest.fn();
     let root = ReactDOM.createRoot(container);
+    
     act(() => {
       root.render(
         <Card onSelect={onSelect} />
